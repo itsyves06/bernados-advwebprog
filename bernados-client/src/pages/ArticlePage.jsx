@@ -1,95 +1,72 @@
-import Button from '../components/Button';
 import plantImg from '../assets/plant.jpg';
 import potImg from '../assets/pot.jpg';
 import readImg from '../assets/read.jpg';
-import bookImg from '../assets/book.jpg';
+import wateringImg from '../assets/watering.jpg';
+import { useParams } from 'react-router-dom';
+import Button from '../components/Button';
+import articles from '../assets/article-content.js';
 
-const ArticlePage = () => {
-  return (
-    <div className="flex w-full flex-col gap-6 pt-20 bg-[#FDFCF7]">
-      
-      <section className="border-y-2 border-[#4A5D3A] bg-[#F6F0D7] px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.28em] text-[#8A9A73]">
-            The Botanical Archive
-          </p>
-          <h1 className="max-w-xl text-4xl font-black leading-tight text-[#4A5D3A] sm:text-5xl">
-            Our Full <span className="text-[#8A9A73]">Collection</span> of Stories.
-          </h1>
-          <p className="mt-4 max-w-lg text-sm leading-7 text-[#6B7C5C] sm:text-base">
-            From botanical guides to the philosophy of slow living, explore the complete archive of the journal.
-          </p>
-          <div className="mt-6">
-            <Button to="/" className="bg-[#4A5D3A] text-white hover:bg-[#3d4d30] px-8 py-3 rounded-full shadow-md transition">
-              Back Home
-            </Button>
-          </div>
+function ArticlePage() {
+    const { name } = useParams();
+    const article = articles.find(article => article.name === name);
+
+    if (!article) {
+        return (
+            <div className="flex w-full flex-col gap-6 bg-[#F6F0D7] min-h-screen">
+                <section className="border-y-2 border-[#80956B] bg-[#BDD29F]/20 px-4 py-12 sm:px-6 lg:px-8">
+                    <div className="mx-auto max-w-3xl text-center">
+                        <h1 className="text-3xl font-bold text-[#80956B]">Article not found</h1>
+                        <Button to="/articles" className="mt-6 bg-[#80956B] text-[#F6F0D7]">Back to Articles</Button>
+                    </div>
+                </section>
+            </div>
+        );
+    }
+
+    return (
+        <div className="flex w-full flex-col gap-6 bg-[#F6F0D7] min-h-screen">
+            <section className="border-y-2 border-[#80956B] bg-[#BDD29F]/20 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+                <div className="max-w-3xl mx-auto">
+                    <div className="mb-4">
+                        <Button to="/articles" className="text-[#80956B] border-[#80956B]">← Back to Articles</Button>
+                    </div>
+                    <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.28em] text-[#90A87F]">
+                        Article
+                    </p>
+                    <h1 className="text-3xl font-bold leading-tight text-[#80956B] sm:text-4xl">
+                        {article.title}
+                    </h1>
+                </div>
+            </section>
+
+            <section className="px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+                <div className="mx-auto max-w-3xl">
+                    
+                    <div className="aspect-4/3 overflow-hidden rounded-[2rem] border-2 border-[#80956B] mb-8 shadow-sm">
+                        <img 
+                            src={article.thumbnail} 
+                            alt={article.title} 
+                            className="h-full w-full object-cover" 
+                        />
+                    </div>
+
+                    <div className="prose prose-sm max-w-none space-y-6 text-[#80956B]">
+                        {article.content.map((paragraph, index) => (
+                            <p key={index} className="text-lg leading-relaxed text-[#80956B] whitespace-pre-wrap">
+                                {paragraph}
+                            </p>
+                        ))}
+                    </div>
+
+                    <div className="mt-12 border-t-2 border-[#80956B] pt-8">
+                        <Button to="/articles" className="bg-[#80956B] text-[#F6F0D7] hover:bg-[#90A87F]">
+                            Back to Articles
+                        </Button>
+                    </div>
+                </div>
+            </section>
         </div>
-      </section>
-
-      <section className="border-y-2 border-[#4A5D3A] bg-[#F6F0D7] px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-6">
-            <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-[#8A9A73]">
-              Featured Articles
-            </p>
-            <h2 className="mt-2 text-2xl font-bold text-[#4A5D3A]">The Complete Entry Grid</h2>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-  
-            <article className="rounded-3xl border-2 border-[#4A5D3A] bg-white p-4 shadow-sm group">
-              <div className="flex aspect-4/3 items-center justify-center overflow-hidden rounded-[1.25rem] bg-[#FDFCF7]">
-                <img src={plantImg} alt="Plant care" className="h-full w-full object-cover transition-transform group-hover:scale-105" />
-              </div>
-              <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.24em] text-[#8A9A73]">Volume 01</p>
-              <h3 className="mt-2 text-lg font-bold text-[#4A5D3A]">Indoor Foresting</h3>
-              <p className="mt-3 text-sm leading-6 text-[#6B7C5C]">
-                How to choose and maintain plants that thrive in modern city apartments.
-              </p>
-              <Button className="mt-4 w-full bg-[#8A9A73] text-white py-2 rounded-xl" variant="primary">Read More</Button>
-            </article>
-
-            <article className="rounded-3xl border-2 border-[#4A5D3A] bg-white p-4 shadow-sm group">
-              <div className="flex aspect-4/3 items-center justify-center overflow-hidden rounded-[1.25rem] bg-[#FDFCF7]">
-                <img src={potImg} alt="Ceramics" className="h-full w-full object-cover transition-transform group-hover:scale-105" />
-              </div>
-              <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.24em] text-[#8A9A73]">Volume 02</p>
-              <h3 className="mt-2 text-lg font-bold text-[#4A5D3A]">The Ceramic Guide</h3>
-              <p className="mt-3 text-sm leading-6 text-[#6B7C5C]">
-                Why handcrafted stoneware is the heart of a minimalist home.
-              </p>
-              <Button className="mt-4 w-full bg-[#8A9A73] text-white py-2 rounded-xl" variant="primary">Read More</Button>
-            </article>
-
-            <article className="rounded-3xl border-2 border-[#4A5D3A] bg-white p-4 shadow-sm group">
-              <div className="flex aspect-4/3 items-center justify-center overflow-hidden rounded-[1.25rem] bg-[#FDFCF7]">
-                <img src={readImg} alt="Slow reading" className="h-full w-full object-cover transition-transform group-hover:scale-105" />
-              </div>
-              <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.24em] text-[#8A9A73]">Volume 03</p>
-              <h3 className="mt-2 text-lg font-bold text-[#4A5D3A]">Morning Rituals</h3>
-              <p className="mt-3 text-sm leading-6 text-[#6B7C5C]">
-                Building a design library that inspires your daily creative practice.
-              </p>
-              <Button className="mt-4 w-full bg-[#8A9A73] text-white py-2 rounded-xl" variant="primary">Read More</Button>
-            </article>
-
-            <article className="rounded-3xl border-2 border-[#4A5D3A] bg-white p-4 shadow-sm group">
-              <div className="flex aspect-4/3 items-center justify-center overflow-hidden rounded-[1.25rem] bg-[#FDFCF7]">
-                <img src={bookImg} alt="Design books" className="h-full w-full object-cover transition-transform group-hover:scale-105" />
-              </div>
-              <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.24em] text-[#8A9A73]">Volume 04</p>
-              <h3 className="mt-2 text-lg font-bold text-[#4A5D3A]">Nature Space</h3>
-              <p className="mt-3 text-sm leading-6 text-[#6B7C5C]">
-                Own your space and connect to nature.
-              </p>
-              <Button className="mt-4 w-full bg-[#8A9A73] text-white py-2 rounded-xl" variant="primary">Read More</Button>
-            </article>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
+    );
+}
 
 export default ArticlePage;
