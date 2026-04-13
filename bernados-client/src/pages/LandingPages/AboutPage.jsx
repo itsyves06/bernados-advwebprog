@@ -1,7 +1,7 @@
-import Button from '../components/Button';
-import profileImg from '../assets/read.jpg';
-import plantImg from '../assets/plant.jpg';
-import potImg from '../assets/pot.jpg';
+import Button from '../../components/Button';
+import profileImg from '../../assets/read.jpg';
+import plantImg from '../../assets/plant.jpg';
+import potImg from '../../assets/pot.jpg';
 
 const AboutPage = () => {
   return (

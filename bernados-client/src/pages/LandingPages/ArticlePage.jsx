@@ -1,10 +1,10 @@
-import plantImg from '../assets/plant.jpg';
-import potImg from '../assets/pot.jpg';
-import readImg from '../assets/read.jpg';
-import wateringImg from '../assets/watering.jpg';
+import plantImg from '../../assets/plant.jpg';
+import potImg from '../../assets/pot.jpg';
+import readImg from '../../assets/read.jpg';
+import wateringImg from '../../assets/watering.jpg';
 import { useParams } from 'react-router-dom';
-import Button from '../components/Button';
-import articles from '../assets/article-content.js';
+import Button from '../../components/Button.jsx';
+import articles from '../../assets/article-content.js';
 
 function ArticlePage() {
     const { name } = useParams();

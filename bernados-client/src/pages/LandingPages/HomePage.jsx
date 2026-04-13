@@ -1,7 +1,7 @@
-import Button from '../components/Button';
-import plantImg from '../assets/plant.jpg';
-import potImg from '../assets/pot.jpg';
-import readImg from '../assets/read.jpg';
+import Button from '../../components/Button';
+import plantImg from '../../assets/plant.jpg';
+import potImg from '../../assets/pot.jpg';
+import readImg from '../../assets/read.jpg';
 
 const HomePage = () => {
   return (
