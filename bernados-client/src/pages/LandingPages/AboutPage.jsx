@@ -4,22 +4,22 @@ import logo from '../../assets/img/nubdexchange_logo.png';
 const AboutPage = () => {
   return (
     <div className="flex w-full flex-col gap-6">
-      <section className="border-y-2 border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+      <section className="border-y-2 border-zinc-900 bg-[#ffb800] px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-          <div className="rounded-3xl border-2 border-dashed border-zinc-300 bg-zinc-100 p-6">
-            <div className="flex min-h-72 items-center justify-center rounded-[1.25rem] bg-zinc-200">
-              <img src={logo} alt="BulldogEx" className="h-32 w-32 rounded-full border-2 border-zinc-900 bg-zinc-50 object-contain" />
+          <div className="rounded-3xl border-2 border-border-zinc-300 bg-[#000080] p-6">
+            <div className="flex min-h-72 items-center justify-center rounded-[1.25rem] bg-[#ffb800]">
+              <img src={logo} alt="BulldogEx" className="bg-zinc-100 object-contain" />
             </div>
           </div>
 
           <div>
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-500">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#00000]">
               About Store
             </p>
             <h1 className="max-w-xl text-3xl font-bold leading-tight text-zinc-900 sm:text-4xl">
               A campus shop focused on useful products and simple ordering.
             </h1>
-            <p className="mt-4 max-w-lg text-sm leading-7 text-zinc-600 sm:text-base">
+            <p className="mt-4 max-w-lg text-sm leading-7 text-[#00000] sm:text-base">
               BulldogEx Shop keeps the low-fidelity layout system while presenting clear
               product categories, quick actions, and straightforward store information.
             </p>
@@ -33,9 +33,9 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="border-y-2 border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+      <section className="border-y-2 border-zinc-900 bg-[#ffb800] px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
         <div className="mb-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-500">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#00000]">
             Store Overview
           </p>
           <h2 className="mt-2 text-2xl font-semibold text-zinc-900">Quick store blocks</h2>
@@ -69,10 +69,10 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="border-y-2 border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+      <section className="border-y-2 border-zinc-900 bg-[#ffb800] px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-500">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#00000]">
               Store Flow
             </p>
             <h2 className="mt-2 text-2xl font-semibold text-zinc-900">Stacked shopping wireframe</h2>
@@ -106,17 +106,15 @@ const AboutPage = () => {
               Category Grid
             </p>
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCnnu1vJncIpOqmYPdiGXJdQQvQozBgRckKw&s'/>
               <div className="flex aspect-square items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
+                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR5_8ABwwq8xxm7Wn1iSxUaS2bcozVwKRV7w&s'/>
               </div>
               <div className="flex aspect-square items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
+                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp1HMHkm0PO8Zwzf_P8kOyVJWbmI77TDGQtg&s' />
               </div>
               <div className="flex aspect-square items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
-              </div>
-              <div className="flex aspect-square items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
+               <img src='https://img.lazcdn.com/g/p/9687e1b16edadca15edc41a132cde1ac.jpg_720x720q80.jpg' />
               </div>
             </div>
             <Button to="/products" className="mt-5">View Products</Button>

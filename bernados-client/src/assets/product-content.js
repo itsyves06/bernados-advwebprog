@@ -2,6 +2,7 @@ const products = [
   {
     name: 'campus-tote-bag',
     title: 'Campus Tote Bag',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCnnu1vJncIpOqmYPdiGXJdQQvQozBgRckKw&s',
     category: 'Bags',
     price: 'PHP 499',
     stock: 'In stock',
@@ -14,6 +15,7 @@ const products = [
   {
     name: 'daily-notes-pack',
     title: 'Daily Notes Pack',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlyucGhoI53lnSmio3ymsXpYlvIt2mszva5A&s',
     category: 'Stationery',
     price: 'PHP 249',
     stock: 'In stock',
@@ -26,6 +28,7 @@ const products = [
   {
     name: 'stainless-tumbler',
     title: 'Stainless Tumbler',
+    image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR5_8ABwwq8xxm7Wn1iSxUaS2bcozVwKRV7w&s',
     category: 'Drinkware',
     price: 'PHP 599',
     stock: 'Low stock',
@@ -38,6 +41,7 @@ const products = [
   {
     name: 'wireless-study-lamp',
     title: 'Wireless Study Lamp',
+    image:'https://mandauefoam.ph/cdn/shop/files/mandaue-foam-theau-adjustable-desk-lamp-1151804438.png?v=1774406214&width=900',
     category: 'Tech',
     price: 'PHP 899',
     stock: 'In stock',
@@ -50,6 +54,7 @@ const products = [
   {
     name: 'hoodie-jacket',
     title: 'Hoodie Jacket',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp1HMHkm0PO8Zwzf_P8kOyVJWbmI77TDGQtg&s',
     category: 'Apparel',
     price: 'PHP 1,199',
     stock: 'Preorder',
@@ -62,6 +67,7 @@ const products = [
   {
     name: 'desk-organizer-kit',
     title: 'Desk Organizer Kit',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm9xKCzmk51DXSCJe18ceNYc1esAOjXFGvFg&s',
     category: 'Workspace',
     price: 'PHP 349',
     stock: 'In stock',
@@ -74,6 +80,7 @@ const products = [
   {
     name: 'id-lanyard-set',
     title: 'ID Lanyard Set',
+    image: 'https://img.lazcdn.com/g/p/9687e1b16edadca15edc41a132cde1ac.jpg_720x720q80.jpg',
     category: 'Accessories',
     price: 'PHP 179',
     stock: 'In stock',
@@ -86,6 +93,7 @@ const products = [
   {
     name: 'exam-week-care-pack',
     title: 'Exam Week Care Pack',
+    image:'https://www.liliesandloafers.com/wp-content/uploads/2016/11/IMG_9853-2.jpg',
     category: 'Bundles',
     price: 'PHP 399',
     stock: 'In stock',

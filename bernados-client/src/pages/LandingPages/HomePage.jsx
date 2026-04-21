@@ -36,7 +36,7 @@ const HomePage = () => {
                 </div>
             </section>
 
-            <section className="border-y-2 border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+            <section className="border-y-2 border-[#1e009f] bg-[#ffb800] px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
                 <div className="mb-6">
                     <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-500">
                         Store Overview
@@ -72,7 +72,7 @@ const HomePage = () => {
                 </div>
             </section>
 
-            <section className="border-y-2 border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+            <section className="border-y-2 border-[#1e009f] bg-[#ffb800] px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
                 <div className="mb-6">
                     <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-500">
                         Shop Sections
@@ -82,9 +82,7 @@ const HomePage = () => {
 
                 <div className="grid gap-4 md:grid-cols-3">
                     <article className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-4">
-                        <div className="flex aspect-4/3 items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                            <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
-                        </div>
+                        <img src='https://img.lazcdn.com/g/p/9687e1b16edadca15edc41a132cde1ac.jpg_720x720q80.jpg' />
                         <h3 className="mt-4 text-lg font-semibold text-zinc-900">Daily Essentials</h3>
                         <p className="mt-3 text-sm leading-6 text-zinc-600">
                             Bags, tumblers, lanyards, and items used every school day.
@@ -93,9 +91,7 @@ const HomePage = () => {
                     </article>
 
                     <article className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-4">
-                        <div className="flex aspect-4/3 items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                            <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
-                        </div>
+                        <img src='https://cdn.vectorstock.com/i/1000v/81/19/school-essentials-flat-set-vector-10488119.jpg'/>
                         <h3 className="mt-4 text-lg font-semibold text-zinc-900">Study Supplies</h3>
                         <p className="mt-3 text-sm leading-6 text-zinc-600">
                             Notes, desk tools, and study kits for class and review weeks.
@@ -104,9 +100,7 @@ const HomePage = () => {
                     </article>
 
                     <article className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-4">
-                        <div className="flex aspect-4/3 items-center justify-center rounded-[1.25rem] bg-zinc-200">
-                            <div className="h-12 w-12 border-2 border-zinc-300 bg-zinc-100" />
-                        </div>
+                        <img src='https://www.national-u.edu.ph/wp-content/uploads/2024/11/NU-x-Adidas.jpg' />
                         <h3 className="mt-4 text-lg font-semibold text-zinc-900">Campus Apparel</h3>
                         <p className="mt-3 text-sm leading-6 text-zinc-600">
                             Comfortable pieces for class days, commute days, and weekends.

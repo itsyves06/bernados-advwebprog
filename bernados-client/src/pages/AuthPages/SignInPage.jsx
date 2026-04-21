@@ -9,14 +9,14 @@ const actionButtonClassName = 'w-full rounded-xl py-3 text-[11px] tracking-[0.2e
 const SignInPage = () => {
   return (
     <>
-      <h1 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">Log In</h1>
-      <p className="mt-3 text-sm leading-6 text-zinc-600">
+      <h1 className="text-3xl font-bold tracking-tight text-[#1e009f] sm:text-4xl">Log In</h1>
+      <p className="mt-3 text-sm leading-6 text-[#00000]">
         Access your store account to review orders, saved items, and pickup details.
       </p>
 
       <form className="mt-8 space-y-5">
         <div>
-          <label htmlFor="signin-email" className="text-sm font-medium text-zinc-700">
+          <label htmlFor="signin-email" className="text-sm font-medium text-[#00000]">
             Email Address
           </label>
           <input
@@ -29,7 +29,7 @@ const SignInPage = () => {
         </div>
 
         <div>
-          <label htmlFor="signin-password" className="text-sm font-medium text-zinc-700">
+          <label htmlFor="signin-password" className="text-sm font-medium text-[#00000]">
             Password
           </label>
           <input
@@ -39,17 +39,17 @@ const SignInPage = () => {
             autoComplete="current-password"
             className={inputClasses}
           />
-          <p className="mt-2 text-xs leading-5 text-zinc-500">
+          <p className="mt-2 text-xs leading-5 text-[#00000]">
             It must be a combination of minimum 8 letters, numbers, and symbols.
           </p>
         </div>
 
         <div className="flex items-center justify-between gap-4 text-sm">
-          <label className="flex items-center gap-2 text-zinc-600">
+          <label className="flex items-center gap-2 text-[#00000]">
             <input type="checkbox" className="h-4 w-4 rounded border-zinc-300 accent-zinc-900" />
             <span>Remember me</span>
           </label>
-          <button type="button" className="font-medium text-zinc-700 transition hover:text-zinc-900">
+          <button type="button" className="font-medium text-[#00000] transition hover:text-[#1e009f]">
             Forgot Password?
           </button>
         </div>
@@ -68,9 +68,9 @@ const SignInPage = () => {
         </div>
       </form>
 
-      <div className="mt-8 border-t border-zinc-200 pt-6 text-sm text-zinc-600">
+      <div className="mt-8 border-t border-zinc-200 pt-6 text-sm text-[#00000">
         No account yet?{' '}
-        <Link to="/auth/signup" className="font-semibold text-zinc-900 transition hover:text-zinc-600">
+        <Link to="/auth/signup" className="font-semibold text-zinc-900 transition hover:text-[#1e009f]">
           Sign Up
         </Link>
       </div>

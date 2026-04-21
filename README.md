@@ -26,7 +26,7 @@ The current project is **BulldogEx Shop**, a low-fidelity e-commerce wireframe f
 Install dependencies inside the client app:
 
 ```bash
-cd robles-client
+cd bernados-client
 npm install
 ```
 
@@ -129,7 +129,7 @@ git push
 ```text
 long-exam1/
 ├── README.md
-└── robles-client/
+└── roblescd-client/
     ├── .gitignore
     ├── eslint.config.js
     ├── index.html

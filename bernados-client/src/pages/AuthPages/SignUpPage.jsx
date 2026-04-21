@@ -9,15 +9,15 @@ const actionButtonClassName = 'w-full rounded-xl py-3 text-[11px] tracking-[0.2e
 const SignUpPage = () => {
   return (
     <>
-      <h1 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">Sign Up</h1>
-      <p className="mt-3 text-sm leading-6 text-zinc-600">
+      <h1 className="text-3xl font-bold tracking-tight text-[#1e009f] sm:text-4xl">Sign Up</h1>
+      <p className="mt-3 text-sm leading-6 text-[#00000]">
         Create a store account for faster checkout, order updates, and pickup details.
       </p>
 
       <form className="mt-8 space-y-5">
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
-            <label htmlFor="first-name" className="text-sm font-medium text-zinc-700">
+            <label htmlFor="first-name" className="text-sm font-medium text-[#00000]">
               First Name
             </label>
             <input
@@ -29,7 +29,7 @@ const SignUpPage = () => {
             />
           </div>
           <div>
-            <label htmlFor="last-name" className="text-sm font-medium text-zinc-700">
+            <label htmlFor="last-name" className="text-sm font-medium text-[#00000]">
               Last Name
             </label>
             <input
@@ -43,7 +43,7 @@ const SignUpPage = () => {
         </div>
 
         <div>
-          <label htmlFor="signup-email" className="text-sm font-medium text-zinc-700">
+          <label htmlFor="signup-email" className="text-sm font-medium text-[#00000]">
             Email
           </label>
           <input
@@ -56,7 +56,7 @@ const SignUpPage = () => {
         </div>
 
         <div>
-          <label htmlFor="signup-password" className="text-sm font-medium text-zinc-700">
+          <label htmlFor="signup-password" className="text-sm font-medium text-[#00000]">
             Password
           </label>
           <input
@@ -66,7 +66,7 @@ const SignUpPage = () => {
             autoComplete="new-password"
             className={inputClasses}
           />
-          <p className="mt-2 text-xs leading-5 text-zinc-500">
+          <p className="mt-2 text-xs leading-5 text-[#00000]">
             Use a secure password with letters, numbers, and symbols.
           </p>
         </div>
@@ -85,9 +85,9 @@ const SignUpPage = () => {
         </div>
       </form>
 
-      <div className="mt-8 border-t border-zinc-200 pt-6 text-sm text-zinc-600">
+      <div className="mt-8 border-t border-zinc-200 pt-6 text-sm text-[#00000]">
         Already have an account?{' '}
-        <Link to="/auth/signin" className="font-semibold text-zinc-900 transition hover:text-zinc-600">
+        <Link to="/auth/signin" className="font-semibold text-[#00000] transition hover:text-[#1e009f]">
           Log In
         </Link>
       </div>
