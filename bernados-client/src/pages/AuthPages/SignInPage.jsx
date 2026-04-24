@@ -11,7 +11,7 @@ const SignInPage = () => {
 
   const handleLogin = (e) => {
     e.preventDefault(); 
-    navigate('/'); 
+    navigate('/dashboard'); 
   };
 
   return (

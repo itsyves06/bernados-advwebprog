@@ -27,9 +27,7 @@ function ArticlePage() {
         <div className="flex w-full flex-col gap-6 bg-[#F6F0D7] min-h-screen">
             <section className="border-y-2 border-[#80956B] bg-[#BDD29F]/20 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
                 <div className="max-w-3xl mx-auto">
-                    <div className="mb-4">
-                        <Button to="/articles" className="text-[#80956B] border-[#80956B]">← Back to Articles</Button>
-                    </div>
+                    
                     <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.28em] text-[#90A87F]">
                         Article
                     </p>
