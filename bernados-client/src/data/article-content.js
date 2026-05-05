@@ -1,7 +1,7 @@
-import plant from './plant.jpg';
-import pot from './pot.jpg';
-import read from './read.jpg';
-import watering from './watering.jpg';
+import plant from '../assets/plant.jpg';
+import pot from '../assets/pot.jpg';
+import read from '../assets/read.jpg';
+import watering from '../assets/watering.jpg';
 
 const articles = [
   {
