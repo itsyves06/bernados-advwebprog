@@ -22,6 +22,9 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import PeopleIcon from "@mui/icons-material/People";
 
+// 1. Import an icon for your new Articles section
+import ArticleIcon from "@mui/icons-material/Article"; 
+
 const drawerWidth = 260;
 
 const AppBar = styled(MuiAppBar, {
@@ -80,11 +83,19 @@ const DashLayout = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // 2. Added Articles route item to your menu mapping registry array
   const menuItems = [
     { label: "Dashboard", to: "/dashboard", icon: <DashboardIcon /> },
     { label: "Reports", to: "/dashboard/reports", icon: <BarChartIcon /> },
     { label: "Users", to: "/dashboard/users", icon: <PeopleIcon /> },
+    { label: "Articles", to: "/dashboard/articles", icon: <ArticleIcon /> }, 
   ];
+
+  // 3. Optional helper to make the Top App Bar Title say what page you are on dynamically!
+  const getCurrentTitle = () => {
+    const currentItem = menuItems.find(item => item.to === location.pathname);
+    return currentItem ? currentItem.label.toUpperCase() : "DASHBOARD";
+  };
 
   return (
     <Box sx={{ display: "flex", backgroundColor: "#F6F0D7", minHeight: "100vh" }}>
@@ -98,7 +109,7 @@ const DashLayout = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" sx={{ fontWeight: 900 }}>
-            REPORTS
+            {getCurrentTitle()}
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <Button
@@ -140,6 +151,7 @@ const DashLayout = () => {
                 <ListItemIcon sx={{ color: "#F6F0D7", minWidth: 0, mr: open ? 2 : "auto", justifyContent: "center" }}>
                   {item.icon}
                 </ListItemIcon>
+                <ListItemButton text="..." sx={{ display: "none" }} /> {/* Silent node item anchor */}
                 <ListItemText primary={item.label} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
