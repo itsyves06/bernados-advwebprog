@@ -1,15 +1,20 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const connectDB = async () => {
-  // Connect MongoDB at default port 27017.
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
+    // Check if already connected
+    if (mongoose.connection.readyState >= 1) return;
 
-    });
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    if (!process.env.MONGO_URI) {
+      console.error("MONGO_URI is not defined in environment variables");
+      return; 
+    }
+
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("MongoDB Connected");
   } catch (error) {
-    console.error(`Error: ${error.message}`);
-    process.exit(1); // Exit process with failure
+    console.error(`Database connection failed: ${error.message}`);
+    // Do not throw here if you want the API to try again on next request
   }
 };
 
