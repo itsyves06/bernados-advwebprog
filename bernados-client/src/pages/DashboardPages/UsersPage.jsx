@@ -17,7 +17,7 @@ import { DataGrid } from '@mui/x-data-grid'; // Fixed package name from @mui/x-g
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 // API services
-import { fetchUsers, createUser, updateUser } from '../../services/userService';
+import { fetchUsers, createUser, updateUser } from '../../services/UserService';
 
 const modalStyle = {
   position: 'absolute',

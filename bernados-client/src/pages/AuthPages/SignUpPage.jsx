@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
 
 // Import your API creation service
-import { createUser } from '../../services/userService';
+import { createUser } from '../../services/UserService';
 
 const inputClasses = 
   'mt-2 w-full rounded-xl border border-[#C5D9A4] bg-white px-4 py-3 text-sm text-[#4A5D3A] outline-none transition placeholder:text-[#8A9A73]/50 focus:border-[#4A5D3A] focus:ring-1 focus:ring-[#4A5D3A]';
