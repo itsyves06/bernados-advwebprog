@@ -24,7 +24,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
+app.options(" ", cors(corsOptions));
 
 app.get("/", (req, res) => {
   res.send("Backend API is running");
@@ -39,6 +39,12 @@ app.use((err, req, res, next) => {
     success: false,
     message: "Server Error",
   });
+});
+
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 
 module.exports = app;
