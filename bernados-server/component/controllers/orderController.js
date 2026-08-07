@@ -1,9 +1,10 @@
+const { HttpStatus } = require('../config/constants');
 const Order = require('../models/Orders');
 
 exports.getAllOrders = async (req, res, next) => {
   try {
     const orders = await Order.find().sort({ createdAt: -1 });
-    res.status(200).json({ success: true, data: orders });
+    res.status(HttpStatus.OK).json({ success: true, data: orders });
   } catch (error) {
     next(error);
   }
@@ -13,10 +14,10 @@ exports.getOrderById = async (req, res, next) => {
   try {
     const order = await Order.findById(req.params.id);
     if (!order) {
-      return res.status(404).json({ success: false, message: 'Order not found' });
+      return res.status(HttpStatus.NOT_FOUND).json({ success: false, message: 'Order not found' });
     }
 
-    res.status(200).json({ success: true, data: order });
+    res.status(HttpStatus.OK).json({ success: true, data: order });
   } catch (error) {
     next(error);
   }
@@ -25,9 +26,9 @@ exports.getOrderById = async (req, res, next) => {
 exports.createOrder = async (req, res, next) => {
   try {
     const order = await Order.create(req.body);
-    res.status(201).json({ message: 'Order created successfully', data: order });
+    res.status(HttpStatus.CREATED).json({ message: 'Order created successfully', data: order });
   } catch (error) {
-    res.status(500).json({ message: 'Failed to create order' });
+    res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ message: 'Failed to create order' });
   }
 };
 
@@ -39,10 +40,10 @@ exports.updateOrder = async (req, res, next) => {
     });
 
     if (!order) {
-      return res.status(404).json({ success: false, message: 'Order not found' });
+      return res.status(HttpStatus.NOT_FOUND).json({ success: false, message: 'Order not found' });
     }
 
-    res.status(200).json({ success: true, data: order });
+    res.status(HttpStatus.OK).json({ success: true, data: order });
   } catch (error) {
     next(error);
   }
@@ -52,10 +53,10 @@ exports.deleteOrder = async (req, res, next) => {
   try {
     const order = await Order.findByIdAndDelete(req.params.id);
     if (!order) {
-      return res.status(404).json({ success: false, message: 'Order not found' });
+      return res.status(HttpStatus.NOT_FOUND).json({ success: false, message: 'Order not found' });
     }
 
-    res.status(200).json({ success: true, message: 'Order deleted successfully' });
+    res.status(HttpStatus.OK).json({ success: true, message: 'Order deleted successfully' });
   } catch (error) {
     next(error);
   }

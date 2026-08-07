@@ -1,3 +1,5 @@
+const { HttpStatus } = require("./component/config/constants");
+
 require("dotenv").config();
 
 const express = require("express");
@@ -35,7 +37,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", userRoutes);
-app.use("/api/products", productRoutes);
+app.use("/api/v1/products", productRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/carts", cartRoutes);
 app.use("/api/reviews", reviewRoutes);
@@ -48,6 +50,8 @@ app.use((err, req, res, next) => {
     message: "Server Error",
   });
 });
+
+
 
 const PORT = process.env.PORT || 8000;
 

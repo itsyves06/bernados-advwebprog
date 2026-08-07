@@ -11,10 +11,20 @@ const productSchema = new mongoose.Schema(
       type: String,
       default: '',
     },
+    supplier: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     category_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Category',
       required: true,
+    },
+    category_name: {
+      type: String,
+      required: true,
+      trim: true,
     },
     stock_quantity: {
       type: Number,
