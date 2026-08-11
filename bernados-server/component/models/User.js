@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema(
   {
-    full_name: {
+    name: {
       type: String,
       required: true,
       trim: true,
@@ -14,16 +14,14 @@ const userSchema = new mongoose.Schema(
       lowercase: true,
       trim: true,
     },
-    password_hash: {
+    password: {
       type: String,
       required: true,
     },
-    phone_number: {
+    role: {
       type: String,
-      required: true,
-    },
-    address: {
-      type: String,
+      enum: ['Customer', 'Admin'],
+      default: 'Customer',
       required: true,
     },
   },

@@ -36,7 +36,7 @@ app.get("/", (req, res) => {
   res.send("Backend API is running");
 });
 
-app.use("/api/users", userRoutes);
+app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/products", productRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/carts", cartRoutes);
