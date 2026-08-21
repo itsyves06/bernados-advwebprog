@@ -8,13 +8,16 @@ const {
   deleteProduct,
 } = require('../controllers/productController');
 
+const { loginLimiter } = require('../middleware/loginLimiter'); 
+
+// Apply rate limiting to specific routes, such as POST, PUT, and DELETE
 router.route('/')
   .get(getAllProducts)
-  .post(createProduct);
+  .post(loginLimiter, createProduct); // Rate limited product creation
 
 router.route('/:id')
   .get(getProductById)
-  .put(updateProduct)
-  .delete(deleteProduct);
+  .put(loginLimiter, updateProduct)    // Rate limited product update
+  .delete(loginLimiter, deleteProduct); // Rate limited product deletion
 
 module.exports = router;

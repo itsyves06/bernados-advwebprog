@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const { HttpStatus } = require('../config/constants');
 const User = require('../models/User');
 
-//REGISTRATION
+// REGISTRATION
 exports.register = async (req, res, next) => {
   try {
     const { name, email, password, role } = req.body;
@@ -39,7 +39,7 @@ exports.register = async (req, res, next) => {
   }
 };
 
-//LOGIN
+// LOGIN
 exports.login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
@@ -81,37 +81,41 @@ exports.login = async (req, res, next) => {
   }
 };
 
+// GET ALL USERS
 exports.getAllUsers = async (req, res, next) => {
   try {
     const users = await User.find().select('-password').sort({ createdAt: -1 });
-    res.status(HttpStatus.OK).json({ success: true, data: users });
+    res.status(HttpStatus.OK || 200).json({ success: true, data: users });
   } catch (error) {
     next(error);
   }
 };
 
+// GET USER BY ID
 exports.getUserById = async (req, res, next) => {
   try {
     const user = await User.findById(req.params.id).select('-password');
     if (!user) {
-      return res.status(HttpStatus.NOT_FOUND).json({ success: false, message: 'User not found' });
+      return res.status(HttpStatus.NOT_FOUND || 404).json({ success: false, message: 'User not found' });
     }
 
-    res.status(HttpStatus.OK).json({ success: true, data: user });
+    res.status(HttpStatus.OK || 200).json({ success: true, data: user });
   } catch (error) {
     next(error);
   }
 };
 
+// CREATE USER
 exports.createUser = async (req, res, next) => {
   try {
     const user = await User.create(req.body);
-    res.status(HttpStatus.CREATED).json({ message: 'User created successfully', data: user });
+    res.status(HttpStatus.CREATED || 201).json({ message: 'User created successfully', data: user });
   } catch (error) {
-    res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ message: 'Failed to create user' });
+    res.status(HttpStatus.INTERNAL_SERVER_ERROR || 500).json({ message: 'Failed to create user' });
   }
 };
 
+// UPDATE USER
 exports.updateUser = async (req, res, next) => {
   try {
     const user = await User.findByIdAndUpdate(req.params.id, req.body, {
@@ -120,23 +124,24 @@ exports.updateUser = async (req, res, next) => {
     }).select('-password');
 
     if (!user) {
-      return res.status(HttpStatus.NOT_FOUND).json({ success: false, message: 'User not found' });
+      return res.status(HttpStatus.NOT_FOUND || 404).json({ success: false, message: 'User not found' });
     }
 
-    res.status(HttpStatus.OK).json({ success: true, data: user });
+    res.status(HttpStatus.OK || 200).json({ success: true, data: user });
   } catch (error) {
     next(error);
   }
 };
 
+// DELETE USER
 exports.deleteUser = async (req, res, next) => {
   try {
     const user = await User.findByIdAndDelete(req.params.id);
     if (!user) {
-      return res.status(HttpStatus.NOT_FOUND).json({ success: false, message: 'User not found' });
+      return res.status(HttpStatus.NOT_FOUND || 404).json({ success: false, message: 'User not found' });
     }
 
-    res.status(HttpStatus.OK).json({ success: true, message: 'User deleted successfully' });
+    res.status(HttpStatus.OK || 200).json({ success: true, message: 'User deleted successfully' });
   } catch (error) {
     next(error);
   }

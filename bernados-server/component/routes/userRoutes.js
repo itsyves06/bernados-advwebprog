@@ -9,16 +9,25 @@ const {
   register,
   login,
 } = require('../controllers/userController');
+
+const { 
+  registerValidation, 
+  loginValidation, 
+  userValidation 
+} = require('../middleware/validationMiddleware');
+
+const { loginLimiter } = require('../middleware/loginLimiter');
 const authentication = require('../middleware/authentication.js');
-const authorize= require('../middleware/authorization.js');
+const authorize = require('../middleware/authorization.js');
 
-router.post('/register', register);
-router.post('/login', login);
+router.post('/register', registerValidation, register);
 
-router.get('/', getAllUsers);
-router.get('/:id', getUserById);
-router.post('/', createUser);
-router.put('/:id', updateUser);
-router.delete('/:id', deleteUser);
+router.post('/login', loginLimiter, loginValidation, login);
+
+router.get('/', authentication, authorize('Admin'), getAllUsers);
+router.get('/:id', authentication, getUserById);
+router.post('/', authentication, authorize('Admin'), userValidation, createUser);
+router.put('/:id', authentication, userValidation, updateUser);
+router.delete('/:id', authentication, authorize('Admin'), deleteUser);
 
 module.exports = router;
